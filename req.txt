@@ -1,0 +1,11 @@
+# Path to your ChromeDriver
+chrome_driver_path = "chrome-mac-arm64/Google Chrome for Testing.app"
+
+
+# Replace with the URL of the webpage you want to scrape
+url = "https://www.friends2support.org/"
+driver.get(url)
+
+
+#chrome path 
+/Applications/Google Chrome.app
