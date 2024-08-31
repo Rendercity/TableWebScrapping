@@ -16,7 +16,7 @@ driver = webdriver.Chrome(service=service)
 url = "https://www.friends2support.org/"
 driver.get(url)
 
-# Wait for the page to load
+# Wait for the page to load 
 WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "dpBloodGroup")))
 
 # Interact with the dropdowns
