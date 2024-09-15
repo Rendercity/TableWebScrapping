@@ -14,8 +14,6 @@
     "AB-",
     "B+",
     "B-",
-    "Bombay Blood Group",
-    "INRA",
     "O+",
     "O-"
   ],
