@@ -1,0 +1,49 @@
+2024-09-15 03:37:15,590 - INFO - ====== WebDriver manager ======
+2024-09-15 03:37:15,656 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:37:16,396 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:37:16,504 - INFO - Driver [/Users/jebinj4/.wdm/drivers/chromedriver/mac64/128.0.6613.137/chromedriver-mac-arm64/chromedriver] found in cache
+2024-09-15 03:43:27,783 - INFO - ====== WebDriver manager ======
+2024-09-15 03:43:27,851 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:43:27,983 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:43:28,090 - INFO - Driver [/Users/jebinj4/.wdm/drivers/chromedriver/mac64/128.0.6613.137/chromedriver-mac-arm64/chromedriver] found in cache
+2024-09-15 03:43:31,328 - INFO - SQL queries have been generated and saved as 'insert_queries.sql'.
+2024-09-15 03:44:39,028 - INFO - ====== WebDriver manager ======
+2024-09-15 03:44:39,094 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:44:39,204 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:44:39,307 - INFO - Driver [/Users/jebinj4/.wdm/drivers/chromedriver/mac64/128.0.6613.137/chromedriver-mac-arm64/chromedriver] found in cache
+2024-09-15 03:44:42,496 - INFO - SQL queries have been generated and saved as 'insert_queries.sql'.
+2024-09-15 03:45:50,735 - INFO - ====== WebDriver manager ======
+2024-09-15 03:45:50,801 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:45:50,913 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:45:51,013 - INFO - Driver [/Users/jebinj4/.wdm/drivers/chromedriver/mac64/128.0.6613.137/chromedriver-mac-arm64/chromedriver] found in cache
+2024-09-15 03:45:54,186 - INFO - SQL queries have been generated and saved as 'insert_queries.sql'.
+2024-09-15 03:47:38,241 - INFO - ====== WebDriver manager ======
+2024-09-15 03:47:38,306 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:47:38,682 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:47:39,023 - INFO - Driver [/Users/jebinj4/.wdm/drivers/chromedriver/mac64/128.0.6613.137/chromedriver-mac-arm64/chromedriver] found in cache
+2024-09-15 03:47:42,114 - INFO - SQL queries have been generated and saved as 'insert_queries.sql'.
+2024-09-15 03:49:20,681 - INFO - ====== WebDriver manager ======
+2024-09-15 03:49:20,746 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:49:21,084 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:49:21,421 - INFO - Driver [/Users/jebinj4/.wdm/drivers/chromedriver/mac64/128.0.6613.137/chromedriver-mac-arm64/chromedriver] found in cache
+2024-09-15 03:49:24,563 - INFO - SQL queries have been generated and saved as 'insert_queries.sql'.
+2024-09-15 03:50:28,446 - INFO - ====== WebDriver manager ======
+2024-09-15 03:50:28,513 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:50:28,843 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:50:29,173 - INFO - Driver [/Users/jebinj4/.wdm/drivers/chromedriver/mac64/128.0.6613.137/chromedriver-mac-arm64/chromedriver] found in cache
+2024-09-15 03:50:32,130 - INFO - SQL queries have been generated and saved as 'insert_queries.sql'.
+2024-09-15 03:50:43,658 - INFO - ====== WebDriver manager ======
+2024-09-15 03:50:43,726 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:50:43,823 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:50:43,916 - INFO - Driver [/Users/jebinj4/.wdm/drivers/chromedriver/mac64/128.0.6613.137/chromedriver-mac-arm64/chromedriver] found in cache
+2024-09-15 03:50:47,321 - INFO - SQL queries have been generated and saved as 'insert_queries.sql'.
+2024-09-15 03:52:11,764 - INFO - ====== WebDriver manager ======
+2024-09-15 03:52:11,834 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:52:11,988 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:52:12,101 - INFO - Driver [/Users/jebinj4/.wdm/drivers/chromedriver/mac64/128.0.6613.137/chromedriver-mac-arm64/chromedriver] found in cache
+2024-09-15 03:52:15,281 - INFO - SQL queries have been generated and saved as 'insert_queries.sql'.
+2024-09-15 03:53:17,212 - INFO - ====== WebDriver manager ======
+2024-09-15 03:53:17,279 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:53:17,392 - INFO - Get LATEST chromedriver version for google-chrome
+2024-09-15 03:53:17,498 - INFO - Driver [/Users/jebinj4/.wdm/drivers/chromedriver/mac64/128.0.6613.137/chromedriver-mac-arm64/chromedriver] found in cache
+2024-09-15 03:53:21,787 - INFO - SQL queries have been generated and saved as 'insert_queries.sql'.
