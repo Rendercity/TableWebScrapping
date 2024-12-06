@@ -1,3 +1,4 @@
 # Ignore specific folders
 # .venv/
 chrome-mac-arm64/
+dropdownscrap/SQL/*

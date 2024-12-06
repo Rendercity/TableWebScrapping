@@ -1,14 +1,19 @@
+import logging
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException  # Added import for TimeoutException
 from webdriver_manager.chrome import ChromeDriverManager
 import time
-
-# Initialize the ChromeDriver using WebDriverManager
 from selenium.webdriver.chrome.service import Service
 
+# Set up logging
+logging.basicConfig(filename='scraping_logfile.log', level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+logging.info("Starting the scraping script.")
+
+# Initialize the ChromeDriver using WebDriverManager
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 
@@ -24,10 +29,10 @@ def select_dropdown_option(element_id, option_text):
     try:
         dropdown = Select(driver.find_element(By.ID, element_id))
         dropdown.select_by_visible_text(option_text.strip())  # Strip any extra spaces
-        print(f"Selected {option_text} in {element_id}")
+        logging.info(f"Selected {option_text} in {element_id}")
         return True
     except Exception as e:
-        print(f"Could not locate element with visible text: {option_text} in {element_id}. Error: {e}")
+        logging.error(f"Could not locate element with visible text: {option_text} in {element_id}. Error: {e}")
         return False
 
 # List to store SQL queries
@@ -44,12 +49,14 @@ countries = ["INDIA"]
 
 # Iterate over the predefined blood groups
 for blood_group in blood_groups:
-    select_dropdown_option("dpBloodGroup", blood_group)
+    if not select_dropdown_option("dpBloodGroup", blood_group):
+        continue
     time.sleep(1)
 
     # Iterate over the predefined countries (only INDIA)
     for country in countries:
-        select_dropdown_option("dpCountry", country)
+        if not select_dropdown_option("dpCountry", country):
+            continue
         time.sleep(1)
 
         # Extract states based on the selected country
@@ -58,7 +65,8 @@ for blood_group in blood_groups:
         states = [option.text for option in dropdown3.options if option.text not in ['-----Select-----', 'ALL']]
 
         for state in states:
-            select_dropdown_option("dpState", state)
+            if not select_dropdown_option("dpState", state):
+                continue
             time.sleep(1)
 
             # Extract districts based on the selected state
@@ -67,7 +75,8 @@ for blood_group in blood_groups:
             districts = [option.text for option in dropdown4.options if option.text not in ['-----Select-----', 'ALL']]
 
             for district in districts:
-                select_dropdown_option("dpDistrict", district)
+                if not select_dropdown_option("dpDistrict", district):
+                    continue
                 time.sleep(1)
 
                 # Extract cities based on the selected district
@@ -77,27 +86,17 @@ for blood_group in blood_groups:
 
                 for city in cities:
                     if not select_dropdown_option("dpCity", city):
-                        continue  # Skip this city if not found
+                        continue
                     time.sleep(1)
 
                     # Click the search button and wait for results
                     search_button = driver.find_element(By.ID, "btnSearchDonor")
                     search_button.click()
 
-                    # Check for "No donors found" message
                     try:
-                        no_results = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, '//*[contains(text(), "No donors found")]')))
-                        print("No donors found for this search.")
-                        continue  # Skip to the next city/state combination
-                    except:
-                        # No "No donors" message, proceed to check for table
-                        pass
-
-                    # Wait for the results table to appear, with a longer timeout
-                    try:
-                        WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//table[@id="dgBloodDonorResults"]')))
-                    except TimeoutException:
-                        print(f"Table not found for {city}. Skipping to the next city.")
+                        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//table[@id="dgBloodDonorResults"]')))
+                    except Exception as e:
+                        logging.error(f"Table not found for city {city}, district {district}, state {state}. Error: {e}")
                         continue
 
                     # Determine the number of pages
@@ -130,14 +129,14 @@ for blood_group in blood_groups:
                             page_links = pagination.find_elements(By.TAG_NAME, "a")  # Re-locate page links
                             next_link = page_links[page]  # Get the link for the next page
                             next_link.click()  # Click the next page link
-                            time.sleep(1)  # Wait for the next page to load
+                            time.sleep(2)  # Wait for the next page to load
 
-# Save the SQL queries to a file
-with open('insert_queries.sql', 'w') as file:
+# Save the SQL queries to a file with UTF-8 encoding
+with open('insert_queries.sql', 'w', encoding='utf-8') as file:
     for query in all_sql_queries:
         file.write(query + "\n")
 
 # Close the browser session
 driver.quit()
 
-print("SQL queries have been generated and saved as 'insert_queries.sql'.")
+logging.info("Scraping completed. SQL queries have been generated and saved as 'insert_queries.sql'.")
